@@ -63,6 +63,13 @@ def __main__():
     print 'Weights observed:', weights 
     print 'Accuracy observed: ', mean(where(h(weights,X) > 0, 1, 0) == y) * 100
 
+    # Allow user to check for the sample data file provided. 
+    # Otherwise user needs to generate a different test wrt no of parameters
+    if dataFileName == 'simpledata.txt':
+        for i in range(10):
+            testX = array([1, int(raw_input('Enter value to check: '))])
+            print 'Label Prediction: ', where(h(weights, testX) > 0, 1, 0)
+        
     exit(0)
 
 
